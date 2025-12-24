@@ -1,0 +1,80 @@
+:root {
+  
+  --body_bg: #f8fafc;
+  --navbar_bg: rgba(255, 255, 255, 0.8);
+  --card_bg: #ffffff;
+  --heading_color: #1e293b;
+  --text_main: #334155;
+  --accent_color: #ff4d6d;
+}
+
+[data-theme="dark"] {
+  
+  --body_bg: #0f172a;
+  --navbar_bg: rgba(15, 23, 42, 0.8);
+  --card_bg: #1e293b;
+  --heading_color: #ffffff;
+  --text_main: #cbd5e1;
+  --accent_color: #ff4d6d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ 
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body {
+  background-color: var(--body_bg);
+  font-family: 'Inter', sans-serif;
+  color: var(--text_main);
+}
+
+.app {
+  padding-top: 70px; 
+  min-height: 100vh;
+  background-color: var(--body_bg);
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-top: 60px; 
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--body_bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #FF4D6D;
+  border-radius: 10px;
+}
+
+.app {
+  /* Removed padding-top because our Hero section starts at the top */
+  min-height: 100vh;
+  background-color: var(--body_bg);
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-top: 0px; 
+  }
+}
+
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--body_bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #FF4D6D;
+  border-radius: 10px;
+}
