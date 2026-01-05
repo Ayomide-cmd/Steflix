@@ -5,12 +5,25 @@
   background: var(--card_bg);
   cursor: pointer;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .movie_card:hover {
-  transform: scale(1.05);
-  z-index: 20;
+  transform: scale(1.08);
+  z-index: 30;
 }
 
 .movie_poster {
@@ -20,13 +33,12 @@
   display: block;
 }
 
-
 .card_rating_badge {
   position: absolute;
   top: 10px;
   right: 10px;
   z-index: 25;
-  background: rgba(15, 23, 42, 0.5); 
+  background: rgba(15, 23, 42, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   display: flex;
@@ -58,7 +70,7 @@
 .movie_info_overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, transparent 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -69,16 +81,17 @@
   pointer-events: none;
 }
 
-.movie_card:hover .movie_info_overlay {
+.movie_info_overlay.show {
   opacity: 1;
   transform: translateY(0);
 }
 
 .movie_title {
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 800;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  line-height: 1.2;
 }
 
 .movie_description {
@@ -86,7 +99,7 @@
   font-size: 0.75rem;
   line-height: 1.4;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

@@ -1,80 +1,95 @@
-:root {
-  
-  --body_bg: #f8fafc;
-  --navbar_bg: rgba(255, 255, 255, 0.8);
-  --card_bg: #ffffff;
-  --heading_color: #1e293b;
-  --text_main: #334155;
-  --accent_color: #ff4d6d;
-}
-
-[data-theme="dark"] {
-  
-  --body_bg: #0f172a;
-  --navbar_bg: rgba(15, 23, 42, 0.8);
-  --card_bg: #1e293b;
-  --heading_color: #ffffff;
-  --text_main: #cbd5e1;
-  --accent_color: #ff4d6d;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
- 
-  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 body {
-  background-color: var(--body_bg);
-  font-family: 'Inter', sans-serif;
-  color: var(--text_main);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.app {
-  padding-top: 70px; 
+
+:root {
+  --bg_primary: #0f172a;
+  --bg_secondary: #1e293b;
+  --text_primary: #ffffff;
+  --text_secondary: #e2e8f0;
+  --accent: #FF4D6D;
+  --card_bg: #1e293b;
+  --overlay: rgba(0, 0, 0, 0.9);
+}
+
+/* LIGHT MODE VARIABLES */
+[data-theme="light"] {
+  --bg_primary: #f8fafc;
+  --bg_secondary: #ffffff;
+  --text_primary: #0f172a;
+  --text_secondary: #475569;
+  --accent: #FF4D6D;
+  --card_bg: #ffffff;
+  --overlay: rgba(255, 255, 255, 0.95);
+}
+
+.App {
   min-height: 100vh;
-  background-color: var(--body_bg);
+  background-color: var(--bg_primary);
+  color: var(--text_primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  main {
-    margin-top: 60px; 
+.main_content {
+  padding-top: 70px;
+}
+
+/* Loading State */
+.loading_row_shimmer {
+  height: 300px;
+  background: linear-gradient(
+    90deg,
+    var(--bg_secondary) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    var(--bg_secondary) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  margin: 2rem 4%;
+  border-radius: 12px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
   }
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--body_bg);
-}
-::-webkit-scrollbar-thumb {
-  background: #FF4D6D;
-  border-radius: 10px;
+.status_text {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: var(--text_secondary);
 }
 
-.app {
-  /* Removed padding-top because our Hero section starts at the top */
-  min-height: 100vh;
-  background-color: var(--body_bg);
+.status_text.error {
+  color: #ef4444;
 }
 
-@media (max-width: 768px) {
-  main {
-    margin-top: 0px; 
-  }
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-/* CUSTOM SCROLLBAR */
-::-webkit-scrollbar {
-  width: 8px;
+/* Selection Colors */
+::selection {
+  background-color: var(--accent);
+  color: white;
 }
-::-webkit-scrollbar-track {
-  background: var(--body_bg);
-}
-::-webkit-scrollbar-thumb {
-  background: #FF4D6D;
-  border-radius: 10px;
+
+::-moz-selection {
+  background-color: var(--accent);
+  color: white;
 }
