@@ -1,50 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap');
 
-/* 1. THEME VARIABLES */
+
 :root {
-  /* DARK MODE (Default) */
+  
   --body_bg: #0f172a;
   --navbar_bg: rgba(15, 23, 42, 0.9);
   --text_color: #ffffff;
-  --text_main: #cbd5e1; /* softer text for descriptions */
+  --text_main: #cbd5e1; 
   --heading_color: #ffffff;
   
-  /* Filter & Button Styles */
+  
   --filter_bg: rgba(255, 255, 255, 0.05);
   --filter_text: #ffffff;
   --filter_border: rgba(255, 255, 255, 0.2);
   
-  /* Card & Components */
+ 
   --card_bg: #1e293b;
   --star_badge_bg: rgba(15, 23, 42, 0.9);
   --accent_color: #ff4d6d;
 }
 
 [data-theme='light'] {
-  /* LIGHT MODE OVERRIDES */
+ 
   --body_bg: #f8fafc;        
   --navbar_bg: rgba(255, 255, 255, 0.9);
   --text_color: #1e293b;    
   --text_main: #334155;
   --heading_color: #0f172a; 
   
-  /* Filter & Button Styles */
+  
   --filter_bg: #ffffff;     
   --filter_text: #475569;   
   --filter_border: #cbd5e1; 
   
-  /* Card & Components */
+
   --card_bg: #ffffff;
   --star_badge_bg: #1e293b;
   --accent_color: #ff4d6d;
 }
 
-/* 2. GLOBAL RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* Smooth transition for theme switching */
   transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
@@ -62,7 +60,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* 3. SCROLLBAR STYLING */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -80,19 +78,18 @@ body {
   background: #ff708a;
 }
 
-/* 4. UTILITY CLASSES */
+
 .app {
   min-height: 100vh;
   background-color: var(--body_bg);
 }
 
-/* Ensure images don't break layouts */
+
 img {
   max-width: 100%;
   display: block;
 }
 
-/* Remove default focus outline for a cleaner look, but keep for accessibility */
 :focus-visible {
   outline: 2px solid var(--accent_color);
   outline-offset: 4px;

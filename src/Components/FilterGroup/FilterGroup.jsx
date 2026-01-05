@@ -3,7 +3,6 @@ import React from "react";
 import "./FilterGroup.css";
 
 const FilterGroup = ({ minRating, onFilter }) => {
-  // ✅ Only show these options
   const ratings = [6, 7, 8];
 
   return (

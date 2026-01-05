@@ -3,12 +3,12 @@ import "./DarkMode.css";
 
 const DarkMode = () => {
   const [theme, setTheme] = useState(() => {
-    // Get theme from localStorage or default to 'dark'
+    
     return localStorage.getItem("theme") || "dark";
   });
 
   useEffect(() => {
-    // Apply theme to document
+   
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   }, [theme]);

@@ -31,7 +31,7 @@
   z-index: 1;
 }
 
-/* Stronger gradient overlay for light mode to ensure text readability */
+
 [data-theme="light"] .hero_banner::before {
   background: linear-gradient(to right, rgba(248, 250, 252, 0.95) 5%, rgba(248, 250, 252, 0.7) 40%, transparent 70%), 
               linear-gradient(to top, rgba(248, 250, 252, 0.9) 10%, transparent 40%);
@@ -52,7 +52,7 @@
   color: #ffffff;
 }
 
-/* Enhanced text shadow for light mode - always keep text white since movie backdrops are dark */
+
 [data-theme="light"] .hero_title_main {
   color: #ffffff;
   text-shadow: 
@@ -263,7 +263,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 768px) {
   .carousel_item {
     width: 150px;

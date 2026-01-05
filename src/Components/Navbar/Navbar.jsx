@@ -56,7 +56,7 @@ const Navbar = ({ setSearchQuery }) => {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      
       <div className={`nav_mobile_drawer ${isMenuOpen ? "show" : ""}`}>
         <div className="drawer_content">
           <div className="drawer_header">

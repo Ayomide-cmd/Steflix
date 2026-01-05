@@ -139,7 +139,7 @@
   animation: pulse 1s ease-out;
 }
 
-/* Light mode gradient background */
+
 [data-theme="light"] .dark_mode_label {
   background: rgba(0, 0, 0, 0.08);
   border-color: rgba(0, 0, 0, 0.15);
@@ -158,7 +158,7 @@
     inset 0 1px 2px rgba(255, 255, 255, 0.3);
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 640px) {
   .dark_mode_label {
     width: 65px;

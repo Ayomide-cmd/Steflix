@@ -51,7 +51,7 @@ const MovieList = ({ category, isFirst, searchQuery = "" }) => {
 
   return (
     <section className={`movie_section ${isFirst ? "first_section" : ""}`}>
-      {/* FULL-BLEED HERO BANNER */}
+      
       {isFirst && movies[0] && !searchQuery && (
         <div
           className="hero_banner"
@@ -76,7 +76,7 @@ const MovieList = ({ category, isFirst, searchQuery = "" }) => {
         </div>
       )}
 
-      {/* HORIZONTAL CAROUSEL ROW */}
+     
       <div className={`row_wrapper ${isFirst && !searchQuery ? "row_overlap" : ""}`}>
         <h2 className="row_title">
           {searchQuery ? `Results: ${searchQuery}` : categoryEmojis[category]}
