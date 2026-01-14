@@ -4,178 +4,69 @@
 }
 
 .dark_mode_checkbox {
-  display: none;
+  display: none !important;
 }
 
 .dark_mode_label {
-  width: 70px;
-  height: 34px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50px;
+  width: 64px;
+  height: 32px;
+  background-color: #334155;
+  border-radius: 32px;
   position: relative;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 8px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  overflow: hidden;
-}
-
-.dark_mode_label::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255, 77, 109, 0.3) 0%, rgba(255, 107, 138, 0.3) 100%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.dark_mode_label:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 77, 109, 0.4);
-  transform: scale(1.05);
-}
-
-.dark_mode_label:hover::before {
-  opacity: 1;
-}
-
-.sun_icon,
-.moon_icon {
-  font-size: 16px;
-  z-index: 2;
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  border: 2px solid #475569;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .toggle_ball {
   position: absolute;
-  width: 26px;
-  height: 26px;
-  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  width: 24px;
+  height: 24px;
+  background-color: #ffffff;
   border-radius: 50%;
-  top: 50%;
-  left: 4px;
-  transform: translateY(-50%);
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  box-shadow: 
-    0 2px 8px rgba(0, 0, 0, 0.2),
-    0 4px 16px rgba(0, 0, 0, 0.1),
-    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
   z-index: 3;
 }
 
-/* When dark mode is active (checked) */
 .dark_mode_checkbox:checked + .dark_mode_label {
-  background: rgba(255, 77, 109, 0.2);
-  border-color: rgba(255, 77, 109, 0.6);
-}
-
-.dark_mode_checkbox:checked + .dark_mode_label::before {
-  opacity: 1;
+  background-color: #1e293b;
+  border-color: #ff4d6d;
 }
 
 .dark_mode_checkbox:checked + .dark_mode_label .toggle_ball {
-  left: calc(100% - 30px);
-  background: linear-gradient(135deg, #FF4D6D 0%, #FF6B8A 100%);
-  box-shadow: 
-    0 2px 8px rgba(255, 77, 109, 0.4),
-    0 4px 16px rgba(255, 77, 109, 0.3),
-    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  transform: translateX(32px);
+  background-color: #ff4d6d;
 }
-
-/* Icon animations and states */
-.dark_mode_checkbox:checked + .dark_mode_label .moon_icon {
-  opacity: 1;
-  transform: scale(1.1) rotate(0deg);
-}
-
-.dark_mode_checkbox:checked + .dark_mode_label .sun_icon {
-  opacity: 0.3;
-  transform: scale(0.8) rotate(-30deg);
-}
-
-.dark_mode_checkbox:not(:checked) + .dark_mode_label .sun_icon {
-  opacity: 1;
-  transform: scale(1.1) rotate(0deg);
-}
-
-.dark_mode_checkbox:not(:checked) + .dark_mode_label .moon_icon {
-  opacity: 0.3;
-  transform: scale(0.8) rotate(30deg);
-}
-
-/* Hover effects on icons */
-.dark_mode_label:hover .sun_icon,
-.dark_mode_label:hover .moon_icon {
-  transform: scale(1.15) rotate(0deg);
-}
-
-/* Active state animation */
-.dark_mode_label:active .toggle_ball {
-  transform: translateY(-50%) scale(0.95);
-}
-
-/* Pulse animation on toggle */
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 
-      0 2px 8px rgba(255, 77, 109, 0.4),
-      0 4px 16px rgba(255, 77, 109, 0.3),
-      0 0 0 0 rgba(255, 77, 109, 0.7);
-  }
-  50% {
-    box-shadow: 
-      0 2px 8px rgba(255, 77, 109, 0.4),
-      0 4px 16px rgba(255, 77, 109, 0.3),
-      0 0 0 8px rgba(255, 77, 109, 0);
-  }
-}
-
-.dark_mode_checkbox:checked + .dark_mode_label .toggle_ball {
-  animation: pulse 1s ease-out;
-}
-
 
 [data-theme="light"] .dark_mode_label {
-  background: rgba(0, 0, 0, 0.08);
-  border-color: rgba(0, 0, 0, 0.15);
-}
-
-[data-theme="light"] .dark_mode_label:hover {
-  background: rgba(0, 0, 0, 0.12);
-  border-color: rgba(255, 77, 109, 0.4);
+  background-color: #e2e8f0;
+  border-color: #cbd5e1;
 }
 
 [data-theme="light"] .dark_mode_checkbox:not(:checked) + .dark_mode_label .toggle_ball {
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-  box-shadow: 
-    0 2px 8px rgba(255, 165, 0, 0.4),
-    0 4px 16px rgba(255, 165, 0, 0.3),
-    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  background-color: #64748b;
 }
 
+.sun_icon, .moon_icon {
+  display: none;
+}
 
 @media (max-width: 640px) {
   .dark_mode_label {
-    width: 65px;
-    height: 32px;
+    width: 58px;
+    height: 28px;
   }
   
   .toggle_ball {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .sun_icon,
-  .moon_icon {
-    font-size: 14px;
+    width: 20px;
+    height: 20px;
   }
   
   .dark_mode_checkbox:checked + .dark_mode_label .toggle_ball {
-    left: calc(100% - 28px);
+    transform: translateX(30px);
   }
 }
